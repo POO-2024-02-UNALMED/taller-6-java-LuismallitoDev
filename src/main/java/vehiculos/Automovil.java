@@ -8,7 +8,7 @@ public class Automovil extends Vehiculo {
         this.puestos = puestos;
         registrarAutomovil();
     }
-
+    //Getters y Setters
     public int getPuestos() { return puestos; }
     public void setPuestos(int puestos) { this.puestos = puestos; }
 }

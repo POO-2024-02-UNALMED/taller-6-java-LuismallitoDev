@@ -8,7 +8,7 @@ public class Camion extends Vehiculo {
         this.ejes = ejes;
         registrarCamion();
     }
-
+    //Getters y Setters
     public int getEjes() { return ejes; }
     public void setEjes(int ejes) { this.ejes = ejes; }
 }

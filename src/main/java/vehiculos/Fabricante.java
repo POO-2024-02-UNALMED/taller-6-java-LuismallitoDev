@@ -8,7 +8,7 @@ public class Fabricante {
         this.nombre = nombre;
         this.pais = pais;
     }
-
+    //Getters y Setters
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public Pais getPais() { return pais; }

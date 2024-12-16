@@ -8,7 +8,7 @@ public class Camioneta extends Vehiculo {
         this.volco = volco;
         registrarCamioneta();
     }
-
+    //Getters y Setters
     public boolean isVolco() { return volco; }
     public void setVolco(boolean volco) { this.volco = volco; }
 }

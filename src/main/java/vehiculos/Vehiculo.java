@@ -19,7 +19,7 @@ public class Vehiculo {
     private static int camionetas = 0;
     private static int camiones = 0;
 
-    private static List<Vehiculo> listaVehiculos = new ArrayList<>();
+    public static List<Vehiculo> listaVehiculos = new ArrayList<>();
 
     public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, double precio,
             double peso, String traccion, Fabricante fabricante) {
@@ -39,76 +39,6 @@ public class Vehiculo {
         return "Automoviles: " + automoviles + "\n" +
                 "Camionetas: " + camionetas + "\n" +
                 "Camiones: " + camiones;
-    }
-
-    public static Pais paisMasVendedor() {
-        Pais paisMasVendedor = null;
-        int ventasMax = 0;
-
-        for (Pais pais : obtenerListaPaises()) {
-            int ventas = contarVentasPorPais(pais);
-            if (ventas > ventasMax) {
-                ventasMax = ventas;
-                paisMasVendedor = pais;
-            }
-        }
-        return paisMasVendedor;
-    }
-
-    public static Fabricante fabricaMayorVentas() {
-        Fabricante fabricaMayorVentas = null;
-        int maxVentas = 0;
-
-        for (Fabricante fabricante : obtenerListaFabricantes()) {
-            int ventas = contarVentasPorFabricante(fabricante);
-            if (ventas > maxVentas) {
-                maxVentas = ventas;
-                fabricaMayorVentas = fabricante;
-            }
-        }
-        return fabricaMayorVentas;
-    }
-
-    private static List<Pais> obtenerListaPaises() {
-        List<Pais> listaPaises = new ArrayList<>();
-        for (Vehiculo vehiculo : listaVehiculos) {
-            Pais pais = vehiculo.getFabricante().getPais();
-            if (!listaPaises.contains(pais)) {
-                listaPaises.add(pais);
-            }
-        }
-        return listaPaises;
-    }
-
-    private static List<Fabricante> obtenerListaFabricantes() {
-        List<Fabricante> listaFabricantes = new ArrayList<>();
-        for (Vehiculo vehiculo : listaVehiculos) {
-            Fabricante fabricante = vehiculo.getFabricante();
-            if (!listaFabricantes.contains(fabricante)) {
-                listaFabricantes.add(fabricante);
-            }
-        }
-        return listaFabricantes;
-    }
-
-    private static int contarVentasPorPais(Pais pais) {
-        int contador = 0;
-        for (Vehiculo vehiculo : listaVehiculos) {
-            if (vehiculo.getFabricante().getPais().equals(pais)) {
-                contador++;
-            }
-        }
-        return contador;
-    }
-
-    private static int contarVentasPorFabricante(Fabricante fabricante) {
-        int contador = 0;
-        for (Vehiculo vehiculo : listaVehiculos) {
-            if (vehiculo.getFabricante().equals(fabricante)) {
-                contador++;
-            }
-        }
-        return contador;
     }
 
     // Getters y Setters
@@ -179,7 +109,9 @@ public class Vehiculo {
     public static int getCantidadVehiculos() {
         return cantidadVehiculos;
     }
-
+    public static void setCatidadVehiculos(int cantidadVehiculos) {
+        Vehiculo.cantidadVehiculos = cantidadVehiculos;
+    }
     protected static void registrarAutomovil() {
         automoviles++;
     }

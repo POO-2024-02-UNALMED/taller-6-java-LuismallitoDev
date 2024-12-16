@@ -109,7 +109,7 @@ public class Vehiculo {
     public static int getCantidadVehiculos() {
         return cantidadVehiculos;
     }
-    public static void setCatidadVehiculos(int cantidadVehiculos) {
+    public static void setCantidadVehiculos(int cantidadVehiculos) {
         Vehiculo.cantidadVehiculos = cantidadVehiculos;
     }
     protected static void registrarAutomovil() {
